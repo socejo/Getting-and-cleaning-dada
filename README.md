@@ -21,7 +21,8 @@ Please refer to the codebook.md which explains what is included in the tidy data
 | activity_labels.txt | 6 | 2 | factor | 1,592 |
 | features.txt | 561 | 2 | factor | 43,936|
 
-3. Having understood how the data is structured, I started the creating of the requested script testing each single step separatelly.
+
+3. Having understood how the data is structured, I started the creation of the requested script, testing each single step separatelly.
 
 ## Script definition 
 
@@ -33,11 +34,11 @@ The script creates two functions:
 * The second parameter is the path where your data sets are located
 
 That path should point to a directory containing the following:
-- train subdirectory
+- train _(subdirectory)_
   - subject_train.txt
   - x_train.txt
   - y_train.txt
-- test subdirectory 
+- test _(subdirectory)_ 
   - subject_train.txt
   - x_train.txt
   - y_train.txt
@@ -54,13 +55,10 @@ This function actually performs the analysis requested by the assignment. It cal
 
 You are *encouraged* to run the script, following this sequence:
 
-  setwd("path of the directory where you downloaded the script" 
-
-  source ("run_analysis.R")
-
-  dataset.dir <- "full path for your data directory"
-
-  PerformAnalysis()
+    setwd("path of the directory where you downloaded the script" 
+    source ("run_analysis.R")
+    dataset.dir <- "full path for your data directory"
+    PerformAnalysis()
 
 At the end of the execution, the following variables will be available on your R Workspace, please feel free to analyse and review them at your leisure:
 
