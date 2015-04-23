@@ -9,6 +9,7 @@ Please refer to the codebook.md which explains what is included in the tidy data
 1. The most demanding part of this assignment was to first of all understand what was requested and also undertand how the data for the project was structured. 
 
 2. After that, some time was spent "playing around" with the provided data, reading it inside R and obtaining some basic numbers:
+
 | file | obs | var | range | size|
 |:-----|----:|----:|:------:|----:|
 | train/subject_train.txt | 7,352 | 1 | 1 to 30 | 30,080 |
