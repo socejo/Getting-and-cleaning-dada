@@ -1,4 +1,4 @@
-# Getting and cleaning dada
+# Getting and cleaning data
 
 This is my repo with information related with the Getting and Cleaning Data Course project.
  
