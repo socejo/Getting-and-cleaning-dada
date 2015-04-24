@@ -17,8 +17,8 @@ Information included in the downloaded file is structured as follows:
     - y_train.txt - file containing one record for each observation with a single column identifying the activity performed by the subject 
   - test - subdirectory for the test part of the project
     - Inertial Signals - subdirectory with several files, apparently correspondig to raw data (not used on this assignment)
-    - **subject_test.txt** - file containing one record for each observation with a single column identifying the subject 
-    - **x_test.txt - file containing one record for each set of 561 measurements corresponding to one observation
+    - subject_test.txt - file containing one record for each observation with a single column identifying the subject 
+    - x_test.txt - file containing one record for each set of 561 measurements corresponding to one observation
     - y_test.txt - file containing one record for each observation with a single column identifying the activity performed by the subject 
   - activity_labels.txt - file with one record for each of the siz activities which were measured 
   - features.txt - file with the names of the 561 measurements recorded for each observation. Detail on them can be find on the file features_info.txt
@@ -46,7 +46,7 @@ This new data set was used to calcule the mean on each variable for each activty
 
 1. The number at the begining of each feature in the features.txt file is an integral part of the name and thus should not be "separated" in a different column. If it is separated, then duplicate values get generated, i.e.: several variables have the same "descriptive" name. The way to avoid separating them is to use as the separator character one that for shure is not included in the names, in this case I used a question mark.
 
-2. There are several variables which name includes the string "mean", however the original project features_info.txt file states that _the variables with mean() on its name have the mean value and those with std() have the Standard deviation_ (66 in total).
+2. There are several variables which name includes the string "mean", however the original project features_info.txt file indicates that _the variables with mean() on its name have the mean value and those with std() have the Standard deviation_ (66 in total).
 
 ### How tidy is tidy data?
 
