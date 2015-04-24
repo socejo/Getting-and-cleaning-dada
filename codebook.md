@@ -71,6 +71,7 @@ The tidied data set contains the following columns:
   - fBodyBodyAccJerkMag
   - fBodyBodyGyroMag
   - fBodyBodyGyroJerkMag
+
 The following variables have also an XYZ component:
   - tBodyAcc
   - tGravityAcc
@@ -81,5 +82,5 @@ The following variables have also an XYZ component:
   - fBodyAccJerk
   - fBodyGyro
 
-Considering there were six different activities performed by each of 30 subjects, the resulting file has 6*30 or 180 observations of 68 variables (66 values plus "activity" and "subject").  
+Considering there were six different activities performed by each of 30 subjects, as expected the resulting file has 6*30 or 180 observations of 68 variables (66 values plus "activity" and "subject").  
   		 
