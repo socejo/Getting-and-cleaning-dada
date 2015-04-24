@@ -6,7 +6,7 @@ library(tidyr)
 ## the directory structure from the downloaded data has been preserved 
 data.dir <- "c:/users/salvador/r/g&cd/data/"
 
-## this function does the actual tidying of the assignement data
+## this function does the actual tidying of the assignment data
 ## it has to be called twice, one for the train data and 
 ## another for the test data
 ReadDataSet <- function (dataset,data.dir)
@@ -18,12 +18,12 @@ ReadDataSet <- function (dataset,data.dir)
     data.dir <- paste(data.dir,dataset,sep="")
     setwd(data.dir)
     
-    ## read file which identifies subjects 
+    ## read that which identifies subjects 
     subjects.file <- paste("subject_",dataset,".txt",sep="")
     subjects <- read.table(subjects.file)
         
-    ## read file which identifies activities performed by each subject 
-    ## additionally read activities data labels (which are in the higher 
+    ## read file that identifies activities performed by each subject 
+    ## additionally read activities data labels (which are in the higher- 
     ## level directory)
     ## and finally join activities with their descriptive labels
     activities.file <- paste("y_",dataset,".txt",sep="")
@@ -46,7 +46,7 @@ ReadDataSet <- function (dataset,data.dir)
                       data
                       )    
 
-    ## read feature labels (which are in the higher level directory)
+    ## read feature labels (which are in the higher level-directory)
     ## the number at the begining of each feature is an integral part of 
     ## the name and thus should not be "separated" in a different column
     ## if it is separated, then duplicate values get generated
@@ -54,8 +54,8 @@ ReadDataSet <- function (dataset,data.dir)
     featureslabels <- read.table("../features.txt",sep="?")
     
     ## name the data columns according to the feature labels 
-    ## remember that two columns have been added in a previuos step 
-    names(data) <- c("subject", "activity", as.character(featureslabels[,1]))
+    ## remember that two columns have been added in a previous step 
+    names(data) <- c("subject", "activity", paste("Average of",as.character(featureslabels[,1])))
     
     ## reset the working directory to what it was before this function was executed
     setwd(olddir)
@@ -85,17 +85,17 @@ PerformAnalysis <- function ()
     print("test data set has been processed")
     
     ## set up a single table with all observations  
-    TidyMeanStd <- rbind(TidyTrain,TidyTest) %>% 
+    TidyMeanStd <<- rbind(TidyTrain,TidyTest) %>% 
         tbl_df() %>% 
         select(subject, activity, contains("mean()"), contains("std()"))        
-    TidyAverage<- TidyMeanStd %>% 
+    TidyAverage <<- TidyMeanStd %>% 
         group_by(activity,subject) %>% 
         summarise_each(funs(mean))
     print("final tidyed data set has been processed")
     
-    ## save the tidyed average file to the data directory  
+    ## save the tidied average file to the data directory  
     write.table(TidyAverage, paste(data.dir,"TidyAverage.txt",sep=""),row.name=FALSE)
-    print("final tidyed data set has been saved to disk as TidyAverage.txt")
+    print("final tidied data set has been saved to disk as TidyAverage.txt")
     
     ## reset the working directory to what it was before this function was executed
     setwd(olddir)
