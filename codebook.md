@@ -72,7 +72,7 @@ The tidied data set contains the following columns:
   - fBodyBodyGyroMag
   - fBodyBodyGyroJerkMag
 
-The following variables have also an XYZ component:
+-  The following columns have also an XYZ component:
   - tBodyAcc
   - tGravityAcc
   - tBodyAccJerk
