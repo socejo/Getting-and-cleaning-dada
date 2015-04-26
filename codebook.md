@@ -36,11 +36,11 @@ The following step where taken for each of the test and train data sets:
 - add subject information (subject_xxxx.txt) as an additonal column named "subject"
 - add activity information (y_xxxx.txt) as an additional column named "activity"
 - transform the activity column to the descriptive names provided at activity_labels.txt
-- adds names for all the data columns, using the names given above for the new columns and the names provided on the features.txt file 
+- add names for all the data columns, using the names given above for the new columns and the names provided on the features.txt file 
 
 Having the two tidied data sets, they where binded together selecting only the columns containing the string "mean()" or the string "std()".
 
-This new data set was used to calcule the mean on each variable for each activty/subject.     
+This new data set was used to calcule the average on each variable for each activity/subject.     
  
 **Notes**
 
@@ -48,20 +48,20 @@ This new data set was used to calcule the mean on each variable for each activty
 
 2. There are several variables which name includes the string "mean", however the original project features_info.txt file indicates that _the variables with mean() on its name have the mean value and those with std() have the Standard deviation_ (66 in total).
 
-### How tidy is tidy data?
+#### How much tidy is tidy?
 
 Unless you have a complete understanding of the original project, it is hard to decide if some of the provided columns "could" be excluded from the tidy data table. For example, you could exclude columns which are the result of some simple calculation on other columns of the same observation...
 
-Also, should you include a column to be able to later sepparate the origin (test/train) of the observation? Due to the type of analysis to perform on this assignment, I decided it was not needed. However, someone else could have decided it was needed.
+Also, should you include a column to be able to later separate the origin (test/train) of the observation? Due to the type of analysis to perform on this assignment, I decided it was not needed. However, someone else could have decided it was needed.
 
-Does the problem stated on the **Note 1** above is a mistake from the designer of the original project? Is it a typo? Is it intended that way? We do not know, and deppending on the answer this could be some other thing to do to tidy the data, maybe thevariables with the same name have the same value... As this was not something requested, neider meaningful  for this assignment it was not analyzed. 
+Does the problem stated on the **Note 1** above is a mistake from the designer of the original project? Is it a typo? Is it intended that way? We do not know, and depending on the answer this could be some other thing to do to tidy the data, maybe the variables with the same name have the same value... As this was not something requested, neither meaningful for this assignment, it was not analyzed. 
 
 ## Columns included in the tidied data set 
 
 The tidied data set contains the following columns:
 - activity - a descriptive name of the activities performed by the subjects
 - subject - and identification of the subject 
-- columns from the original data set, which contain the average for each activity-subject of those columns corresponding to mean or standard deviation measurements (66 in total, 33 for mean and 33 for std). All columns names have been appeded with the words "Average of " to document the fact that their value no longer represents the original value. 
+- columns from the original data set, which contain the average for each activity-subject of those columns corresponding to mean or standard deviation measurements (66 in total, 33 for mean and 33 for std). All columns names have been appended with the words "Average of " to document the fact that their value no longer represents the original value: 
   - tBodyAccMag
   - tGravityAccMag
   - tBodyAccJerkMag
@@ -72,7 +72,7 @@ The tidied data set contains the following columns:
   - fBodyBodyGyroMag
   - fBodyBodyGyroJerkMag
 
--  The following columns have also an XYZ component:
+-  The following columns have also an XYZ component (i.e.: there are three variables of each, corresponding to X, Y and Z measurements):
   - tBodyAcc
   - tGravityAcc
   - tBodyAccJerk
@@ -82,5 +82,4 @@ The tidied data set contains the following columns:
   - fBodyAccJerk
   - fBodyGyro
 
-Considering there were six different activities performed by each of 30 subjects, as expected the resulting file has 6*30 or 180 observations of 68 variables (66 values plus "activity" and "subject").  
-  		 
+Considering there were six different activities performed by 30 subjects, as expected, the resulting file has 6*30 or 180 observations of 68 variables (66 values plus "activity" and "subject").
